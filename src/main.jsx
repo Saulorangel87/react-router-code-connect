@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')).render(
               <Feed />
             </ProtectedRoute>
           } />
-          <Route path='blog-post' element={
+          <Route path='blog-post/:slug' element={
             <ProtectedRoute>
               <BlogPost />
             </ProtectedRoute>
