@@ -14,21 +14,42 @@ import { TextDivider } from "../../components/TextDivider"
 import { Providers } from "../../components/Providers"
 import { Link } from "../../components/Link"
 import styles from './register.module.css'
+import { useAuth } from "../../hooks/useAuth"
+import { useNavigate } from "react-router"
 
 export const Register = () => {
+
+    const { register } = useAuth()
+    const navigate = useNavigate()
+
+    const onSubmit = (formData) => {
+        const name = formData.get('name')
+        const email = formData.get('email')
+        const password = formData.get('password')
+
+        const response = register(name, email, password)
+
+        if (response.success) {
+            navigate('/auth/login')
+        } else {
+            console.error(response.error)
+        }
+
+    }
+
     return (
         <AuthLayout>
             <AuthFormContainer bannerSrc={banner}>
                 <Typography variant="h1" color="--offwhite">Cadastro</Typography>
                 <Typography variant="h2" color="--offwhite">Olá! Preencha seus dados.</Typography>
-                <Form action="">
+                <Form action={onSubmit}>
                     <Fieldset>
                         <Label>
                             Nome
                         </Label>
                         <Input
-                            name="nome"
-                            id="nome"
+                            name="name"
+                            id="name"
                             placeholder="Nome completo"
                             required
                         />
@@ -55,10 +76,10 @@ export const Register = () => {
                             type="password"
                             required
                         />
-                        <Checkbox label="Lembrar-me" required />
+                        <Checkbox label="Lembrar-me" />
                     </Fieldset>
                     <Button type="submit">
-                        Login <IconArrowFoward />
+                        Cadastrar-se <IconArrowFoward />
                     </Button>
                 </Form>
                 <div>
