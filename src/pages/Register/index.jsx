@@ -69,7 +69,7 @@ export const Register = () => {
                     <Typography variant="body" color="--offwhite">
                         Já tem conta?
                     </Typography>
-                    <Link href='#'>
+                    <Link href='/auth/login'>
                         <Typography variant="body" color="--highlight-green">
                             Faça seu login!
                         </Typography>

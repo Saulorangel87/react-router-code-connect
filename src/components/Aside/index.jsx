@@ -16,7 +16,7 @@ export const Aside = () => {
         <nav>
             <ul>
                 <li>
-                    <Link href="#">
+                    <Link href="/">
                         <img src={logo} alt="Logo da Code Connect" />
                     </Link>
                 </li>
@@ -26,7 +26,7 @@ export const Aside = () => {
                     </Button>
                 </li>
                 <li>
-                    <AsideLink href="#">
+                    <AsideLink href="/">
                         <IconFeed />
                         Feed
                     </AsideLink>
@@ -44,7 +44,7 @@ export const Aside = () => {
                     </AsideLink>
                 </li>
                 <li>
-                    <AsideLink href="#">
+                    <AsideLink href="/auth/login">
                         <IconLogin />
                         Login
                     </AsideLink>
