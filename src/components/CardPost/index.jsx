@@ -20,7 +20,7 @@ export const CardPost = ({ post }) => {
             <section className={styles.body}>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
-                <Link to="/blog-post">Ver detalhes</Link>
+                <Link to={`/blog-post/${post.slug}`}>Ver detalhes</Link>
             </section>
             <footer className={styles.footer}>
                 <div className={styles.actions}>
