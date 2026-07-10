@@ -17,6 +17,10 @@
     gap: 40px;
 }
 
+.aside li {
+    height: 30px;
+}
+
 /* Transformar em rodapé com navigation tabs para telas menores que 1000px */
 @media (max-width: 999px) {
     .aside {

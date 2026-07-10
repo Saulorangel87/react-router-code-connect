@@ -14,9 +14,8 @@
     min-height: 0;
 }
 
-/* Adicionar espaço para o rodapé fixo em telas menores */
 @media (max-width: 999px) {
     .app {
-        padding-bottom: 80px;
+        gap: 16px;
     }
 }

@@ -25,16 +25,9 @@
     fill: var(--white);
 }
 
-/* Estilos para mobile - rodapé navigation */
+/* Ajustes para o menu lateral compacto */
 @media (max-width: 999px) {
     .asidelink {
-        gap: 4px;
-        padding: 8px 4px;
-        font-size: 12px;
-    }
-
-    .asidelink svg {
-        width: 20px;
-        height: 20px;
+        gap: 8px;
     }
 }
