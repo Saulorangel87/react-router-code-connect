@@ -1,12 +1,16 @@
-import styles from './comment.module.css'
-import { Avatar } from "../Avatar"
+import styles from "./comment.module.css";
+import { Avatar } from "../Avatar";
+import { ModalComment } from "../ModalComent";
 
 export const Comment = ({ comment }) => {
-
-
-    return (<div className={styles.comment}>
-        <Avatar author={comment.author} />
-        <strong>@{comment.author.name}</strong>
-        <p>{comment.text}</p>
-    </div>)
-}
+  return (
+    <div className={styles.comment}>
+      <Avatar author={comment.author} />
+      <strong>@{comment.author.name}</strong>
+      <p>{comment.text}</p>
+      <div className={styles.divider}>
+        <ModalComment isEditing={true} />
+      </div>
+    </div>
+  );
+};
