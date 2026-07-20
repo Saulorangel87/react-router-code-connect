@@ -64,7 +64,7 @@ export const useAuth = () => {
 
       setUser(data.user);
       localStorage.setItem("auth_user", JSON.stringify(data.user));
-      localStorage.setItem("acess_token", JSON.stringify(data.acess_token));
+      localStorage.setItem("access_token", data.access_token);
 
       return { success: true, user };
     } catch (error) {
