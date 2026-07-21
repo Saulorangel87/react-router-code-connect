@@ -7,22 +7,25 @@ import ReactMarkdown from "react-markdown";
 import { useParams, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import { ModalComment } from "../../components/ModalComent";
+import { http } from "../../Api";
 
 export const BlogPost = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState(null)
+  const [post, setPost] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-      fetch(`http://localhost:3000/blog-posts/slug/${slug}`)
-        .then(response => {
-          if (response.status == 404) {
-            navigate('/not-found')
-          }
-            return response.json()
-        })
-        .then(data => setPost(data))
-  }, [slug, navigate])
+    http
+      .get(`/blog-posts/slug/${slug}`)
+      .then((response) => {
+        setPost(response.data);
+      })
+      .catch((erro) => {
+        if (erro.status == 404) {
+          navigate("/not-found");
+        }
+      });
+  }, [slug, navigate]);
 
   if (!post) {
     return null;
